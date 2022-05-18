@@ -10,7 +10,8 @@ elif question == "no":
   question = input ("Would you like to play this game? type yes or no\n")
 if question == "yes":
   print("Finally! Lets go!") 
+  
 elif question == "no":
-  print("fuck you....") 
+  print("fuck you....you're gonna play it anyway") 
 
 print ("The game is easy, ")
