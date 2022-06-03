@@ -1,15 +1,24 @@
-print("Welcome by Lucifer!")
-def game():
-  print()
-  naam = input("Please enter your name:\n")
+import random
 
-  question = input ("Would you like to play this game? type yes or no\n")
-  if question == "yes":
-    print("Nice! Lets get started")
-  elif question == "no":
-    print("Are you sure? lets try this again!") 
+naam = ""
+aantalLucifers = random.randint(20,25)
+print(f"de computer heeft {aantalLucifers} lucifers gekozen")
+
+def game():
+  global aantalLucifers
+  print()
+  x = input("Hoeveel lucifers wil je weghalen? \n")
+  
+  aantalLucifers = aantalLucifers - int(x)
+  print(f"Nog {aantalLucifers} lucifers over")  
+
+  if aantalLucifers > 0:
     game()
+  else:
+    print("GAME OVER!")
+
 game()
+
 
 
 
