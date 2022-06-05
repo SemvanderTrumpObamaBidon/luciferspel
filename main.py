@@ -1,4 +1,17 @@
+
 import random
+
+"""
+eisen game:
+V Er wordt gebruik gemaakt van commentaar in het programma.
+V Er wordt minimaal 1 functie gebruikt.
+X Er is input van de gebruiker (evt. met controle op de invoer).
+X Er wordt gebruik gemaakt van concatenation. (MENEER WAT WILT U VAN ONS??????????)
+V Er wordt gebruik gemaakt van string methodes.
+V Er wordt gebruik gemaakt van tenminste één while-loop.
+V (bij verbeteringen) Er wordt gebruik gemaakt van een list.
+
+"""
 
 game_over_tekst = """
 
@@ -44,12 +57,14 @@ you_won="""
                              '--'   '--'  `''--'  
 
 """
-def intro():
+#geeft aantal lucifers gekozen door computer en de naam van speler wordt terug gegeven.
+def intro(): 
   naam = input ("Hoi, wat is je naam?\n")
   aantalLucifers = random.randint(20,25)
   print(f"de computer heeft {aantalLucifers} lucifers gekozen")
   return naam, aantalLucifers
   
+#speler kiest aantal lucifers volgens spel regels
 def speler():
   x = ""
   while True:
@@ -62,6 +77,7 @@ def speler():
       else:
         print("Je kunt niet meer lucifers weghalen dan die er zijn, sukkel....")
 
+#compuer kiest aantal lucifers volgens de regels
 def computer():
   if aantalLucifers <= 3:
     print("De computer lacht je uit want hij gaat winnen.")
@@ -73,10 +89,12 @@ def computer():
         print(f"De computer neemt {x} lucifer weg")
         return x
 
+#hoe het spel zelf werkt, functie roept zichzelf aan
 def game(beurt):
   global aantalLucifers
   print()
 
+  #computer en speler spelen om de beurt, speler begint
   if beurt % 2 == 1:
     x = speler()
   else: 
@@ -93,6 +111,7 @@ def game(beurt):
     else: 
       print(game_over_tekst)
 
+#intro en game worden gestart
 naam, aantalLucifers = intro()
 game(1)
 
