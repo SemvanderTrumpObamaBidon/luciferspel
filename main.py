@@ -6,12 +6,13 @@ eisen game:
 V Er wordt gebruik gemaakt van commentaar in het programma.
 V Er wordt minimaal 1 functie gebruikt.
 V Er is input van de gebruiker (evt. met controle op de invoer).
-X Er wordt gebruik gemaakt van concatenation. (MENEER WAT WILT U VAN ONS??????????)
+X Er wordt gebruik gemaakt van concatenation. (MENEER WAT WILT U VAN ONS??????????) 
 V Er wordt gebruik gemaakt van string methodes.
 V Er wordt gebruik gemaakt van tenminste één while-loop.
 V (bij verbeteringen) Er wordt gebruik gemaakt van een list.
-
+ 
 """
+#concatenation hebben wij er niet in want wij gebruiken een f string ipv de concatenation.
 intro_game="""
 
  _              _    ___               
