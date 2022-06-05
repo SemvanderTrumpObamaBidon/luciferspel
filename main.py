@@ -18,22 +18,33 @@ def speler():
       else:
         print("Je kunt niet meer lucifers weghalen dan die er zijn, sukkel....")
 
-def game():
+def computer():
+  while True:
+    x = random.randint(1,3)
+    if x <= aantalLucifers:
+      print(f"De computer neemt {x} lucifer weg")
+      return x
+
+def game(beurt):
   global aantalLucifers
   print()
 
-  x = speler()
+  if beurt % 2 == 1:
+    x = speler()
+  else: 
+    x = computer()
+   
 
   aantalLucifers = aantalLucifers - x
   print(f"Nog {aantalLucifers} lucifers over")  
 
   if aantalLucifers > 0:
-    game()
+    game(beurt + 1)
   else:
     print("GAME OVER!")
 
 naam, aantalLucifers = intro()
-game()
+game(1)
 
 
 
