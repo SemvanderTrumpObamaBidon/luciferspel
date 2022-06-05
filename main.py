@@ -5,14 +5,32 @@ import random
 eisen game:
 V Er wordt gebruik gemaakt van commentaar in het programma.
 V Er wordt minimaal 1 functie gebruikt.
-X Er is input van de gebruiker (evt. met controle op de invoer).
+V Er is input van de gebruiker (evt. met controle op de invoer).
 X Er wordt gebruik gemaakt van concatenation. (MENEER WAT WILT U VAN ONS??????????)
 V Er wordt gebruik gemaakt van string methodes.
 V Er wordt gebruik gemaakt van tenminste één while-loop.
 V (bij verbeteringen) Er wordt gebruik gemaakt van een list.
 
 """
+intro_game="""
 
+ _              _    ___               
+| |            (_)  / __)              
+| | _   _  ____ _ _| |__ _____  ____   
+| || | | |/ ___) (_   __) ___ |/ ___)  
+| || |_| ( (___| | | |  | ____| |      
+ \_)____/ \____)_| |_|  |_____)_|      
+                                       
+                                       
+                                       
+      ____ _____ ____  _____           
+     / _  (____ |    \| ___ |          
+    ( (_| / ___ | | | | ____|          
+     \___ \_____|_|_|_|_____)          
+    (_____|                            
+
+
+"""
 game_over_tekst = """
 
   ________                       
@@ -57,12 +75,11 @@ you_won="""
                              '--'   '--'  `''--'  
 
 """
-#geeft aantal lucifers gekozen door computer en de naam van speler wordt terug gegeven.
-def intro(): 
-  naam = input ("Hoi, wat is je naam?\n")
+#geeft aantal lucifers gekozen door computer 
+def bepaal_aantal_lucifers(): 
   aantalLucifers = random.randint(20,25)
   print(f"de computer heeft {aantalLucifers} lucifers gekozen")
-  return naam, aantalLucifers
+  return aantalLucifers
   
 #speler kiest aantal lucifers volgens spel regels
 def speler():
@@ -111,8 +128,22 @@ def game(beurt):
     else: 
       print(game_over_tekst)
 
+    nog_een_keer=input("wil je nog een keer spelen? type yes/no\n")
+    if nog_een_keer == "yes": 
+      aantalLucifers = bepaal_aantal_lucifers()
+      game(1)
+    else: 
+      print("oke doei")
+
+# Laat de intro van de game zien en geeft de naam van de speler terug
+def intro():
+  print(intro_game)
+  print(" Welkom bij de lucifer game, het spel is easyy. De computer kiest een willekeurig aantal lucifers tussen de 20 en 25. jij  als eerste de keuze om 1, 2 of 3 lucifers weg te nemen. Daarna is het de beurt van de computer. De computer neemt ook 1, 2 of 3 lucifers weg. Dit gaat door totdat iemand als laatste een lucifer MOET wegnemen. als je de laatste hebt wegnomen heb je verloren moet de computer dit doen dan heb jij gewonnen")
+  return input ("Wat is je naam?\n")
+      
 #intro en game worden gestart
-naam, aantalLucifers = intro()
+naam = intro()
+aantalLucifers = bepaal_aantal_lucifers()
 game(1)
 
 
