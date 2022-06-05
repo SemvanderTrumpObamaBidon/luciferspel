@@ -79,7 +79,7 @@ you_won="""
 #geeft aantal lucifers gekozen door computer 
 def bepaal_aantal_lucifers(): 
   aantalLucifers = random.randint(20,25)
-  print(f"de computer heeft {aantalLucifers} lucifers gekozen")
+  print(f"de computer heeft {aantalLucifers} lucifer(s) gekozen")
   return aantalLucifers
   
 #speler kiest aantal lucifers volgens spel regels
@@ -97,11 +97,16 @@ def speler():
 
 #compuer kiest aantal lucifers volgens de regels
 def computer():
-  while True:
-    x = random.randint(1,3)
-    if x < aantalLucifers:
-      print(f"De computer neemt {x} lucifer weg")
-      return x
+  if aantalLucifers <= 4 and aantalLucifers > 1:
+    x = aantalLucifers - 1
+    print(f"De computer lacht je uit en steekt het regel boekje in de fik met een weg genomen lucifer en  neemt {x} lucifer(s) weg")
+    return x
+  else:
+    while True:
+      x = random.randint(1,3)
+      if x < aantalLucifers:
+        print(f"De computer neemt {x} lucifer(s) weg")
+        return x
 
 #hoe het spel zelf werkt, functie roept zichzelf aan
 def game(beurt):
