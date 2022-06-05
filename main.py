@@ -97,15 +97,11 @@ def speler():
 
 #compuer kiest aantal lucifers volgens de regels
 def computer():
-  if aantalLucifers <= 3:
-    print("De computer lacht je uit want hij gaat winnen.")
-    return aantalLucifers
-  else:
-    while True:
-      x = random.randint(1,3)
-      if x <= aantalLucifers:
-        print(f"De computer neemt {x} lucifer weg")
-        return x
+  while True:
+    x = random.randint(1,3)
+    if x < aantalLucifers:
+      print(f"De computer neemt {x} lucifer weg")
+      return x
 
 #hoe het spel zelf werkt, functie roept zichzelf aan
 def game(beurt):
@@ -124,7 +120,7 @@ def game(beurt):
   if aantalLucifers > 0:
     game(beurt + 1)
   else:
-    if beurt % 2 == 1:
+    if beurt % 2 == 0:
       print(you_won)
     else: 
       print(game_over_tekst)
