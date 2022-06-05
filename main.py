@@ -46,7 +46,7 @@ you_won="""
 """
 def intro():
   naam = input ("Hoi, wat is je naam?\n")
-  aantalLucifers = 2#random.randint(20,25)
+  aantalLucifers = random.randint(20,25)
   print(f"de computer heeft {aantalLucifers} lucifers gekozen")
   return naam, aantalLucifers
   
