@@ -140,7 +140,7 @@ def game(beurt):
 # Laat de intro van de game zien en geeft de naam van de speler terug
 def intro():
   print(intro_game)
-  print(" Welkom bij de lucifer game, het spel is easyyyyyyyy. De computer kiest een willekeurig aantal lucifers tussen de 20 en 25. jij maakt  als eerste de keuze om 1, 2 of 3 lucifers weg te nemen. Daarna is het de beurt van de computer. De computer neemt ook 1, 2 of 3 lucifers weg. Dit gaat door totdat iemand als laatste een lucifer MOET wegnemen. als je de laatste hebt wegnomen heb je verloren moet de computer dit doen dan heb jij gewonnen")
+  print("Welkom bij de lucifer game, het spel is easyyyyyyyy.\nDe computer kiest een willekeurig aantal lucifers tussen de 20 en 25.\njij maakt als eerste de keuze om 1, 2 of 3 lucifers weg te nemen.\nDe computer neemt op zijn beurt ook 1, 2 of 3 lucifers weg.\nDit gaat door totdat iemand als laatste een lucifer MOET wegnemen.\nAls je de laatste hebt wegnomen heb je verloren moet de computer dit doen dan heb jij \ngewonnen!!!")
   return input ("Wat is je naam?\n")
       
 #intro en game worden gestart
